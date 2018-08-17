@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alledaags Geloven</title>
+        <meta name="description" content="Dashboard voor dagelijks gebed, studie of bezinning">
+        <!-- Schema.org markup for Google+ -->
+        <meta itemprop="name" content="Alledags Geloven">
+        <meta itemprop="description" content="Dashboard voor dagelijks gebed, studie of bezinning">
+        <meta itemprop="image" content="http://alledaags.gelovenleren.net/var/alledaags-geloven.png">
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@vicmortelmans">
+        <meta name="twitter:title" content="Alledaags Geloven">
+        <meta name="twitter:description" content="Dashboard voor dagelijks gebed, studie of bezinning">
+        <meta name="twitter:creator" content="@vicmortelmans">
+        <!-- Twitter summary card with large image must be at least 280x150px -->
+        <meta name="twitter:image:src" content="http://alledaags.gelovenleren.net/var/alledaags-geloven.png">
+        <!-- Open Graph data -->
+        <meta property="og:title" content="Alledaags Geloven" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="http://alledaags.gelovenleren.net/" />
+        <meta property="og:image" content="http://alledaags.gelovenleren.net/var/alledaags-geloven.png" />
+        <meta property="og:description" content="Dashboard voor dagelijks gebed, studie of bezinning" />
+        <meta property="og:site_name" content="Alledaags Geloven" />
+        <meta property="article:published_time" content="2015-04-10T05:59:00+01:00" />
+        <meta property="article:modified_time" content="2015-04-10T19:08:47+01:00" />
+        <meta property="article:section" content="Publications" />
+        <meta property="article:tag" content="katholiek" />
+        <meta property="fb:admins" content="100003216449243" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin,latin-ext">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <style type="text/css">
+            body {
+            font: 14pt "Roboto", sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            }
+            #body {
+            background-image: url(var/pink-and-white.jpg);
+            background-position: center;
+            background-size: cover;
+            }
+            a {
+            text-decoration: inherit;
+            color: inherit;
+            cursor: pointer;
+            cursor: hand;
+            }
+            #body {
+            padding: 8px;
+            }
+            header {
+            background-color: #D32F2F;
+            margin: auto;
+            }
+            footer {
+            background-color: #607D8B;
+            color: white;
+            padding: 16px 0 16px 0;
+            }
+            footer div {
+            margin: 16px;
+            }
+            h1 /* headline */  {
+            max-width: 1000px;
+            margin: 0;
+            font-size: 24pt;
+            font-weight: normal;
+            color: white;
+            opacity: 0.87;
+            line-height: 32px;
+            padding: 19px 16px 19px 16px;
+            }
+            #container {
+            max-width: 1000px;
+            margin: auto;
+            }
+            .item {
+            margin-top: 28px;
+            margin-bottom: 56px;
+            text-align: center;
+            }
+            .oldNews {
+            display: none;
+            }
+            .card {
+            display: inline-block;
+            background: white;
+            width: 304px;  /* = 320 (phone width) - 16 (2 x gutter) */
+            box-shadow: 0px 3px 6px 0px #777;
+            border-radius: 2px;
+            text-align: left;
+            }
+            .thumbnail {
+            max-height: 480px;
+            background-position: 0 0;
+            background-size: cover;
+            }
+            .padded-image {
+            padding: 26px 16px 0 16px;
+            text-align: center;
+            }
+            .left-image {
+            padding: 0;
+            text-align: left;
+            }
+            .filled-image {
+            padding: 0;
+            text-align: center;
+            }
+            .filled-image img {
+            width: 100%;
+            }
+            .title /* "title"*/ {
+            font-size: 20pt;
+            font-weight: normal;
+            opacity: 0.87;
+            line-height: 24px;
+            padding: 23px 16px 23px 16px;
+            }
+            .subtitle /* "body 2" */ {
+            font-size: 14pt;
+            font-weight: normal;
+            opacity: 0.87;
+            line-height: 18px;
+            padding: 0 16px 26px 16px;
+            }
+            .getijdenreeks .subtitle {
+            padding: 0 0 26px 0;
+            }
+            .text /* "body 2" */ {
+            font-size: 14pt;
+            font-weight: normal;
+            opacity: 0.87;
+            line-height: 18px;
+            padding: 0 16px 26px 16px;
+            }
+            .caption /* "caption" */ {
+            font-size: 12pt;
+            font-weight: normal;
+            opacity: 0.54;
+            line-height: 16px;
+            padding: 0 16px 26px 16px;
+            }
+            .bible .title, .bible .subtitle, a.bible {
+            color: #009688; /* teal */
+            }
+            .main-action-button {
+                background-color: #D32F2F;
+                position: absolute;
+                top: -28px;
+                right: 124px;
+                width: 56px;
+                height: 56px;
+                border-radius: 28px;
+                z-index: 10;
+                background-image: url(var/dove1.png);
+                background-position: 50% 50%;
+                background-size: auto;
+                background-repeat: no-repeat;
+            }
+            .bible .action-button {
+            background-color: #009688;
+            }
+            .catechism .title, .catechism .subtitle, a.catechism {
+            color: #FF5722; /* deep orange */
+            }
+            .catechism .action-button {
+            background-color: #FF5722;
+            }
+            .lectionary .title, .lectionary .subtitle, a.lectionary {
+            color: #E91E63; /* pink */
+            }
+            .lectionary .action-button {
+            background-color: #E91E63;
+            }
+            .saints .title, .saints .subtitle, a.saints {
+            color: #9C27B0; /* purple */
+            }
+            .saints .action-button {
+            background-color: #9C27B0;
+            }
+            .prayer .title, .prayer .subtitle, a.prayer {
+            color: #4CAF50; /* green */
+            }
+            .prayer .action-button {
+            background-color: #4CAF50;
+            }
+            .contemplation .title, .contemplation .subtitle, a.contemplation {
+            color: #2196F3; /* blue */
+            }
+            .contemplation .action-button {
+            background-color: #2196F3;
+            }
+            .actions {
+            border-top: 1pt solid #e0e0e0;
+            position: relative;  /* for .action-button positioning */
+            }
+            .actions.spacer {
+            margin-top: 36px;
+            }
+            .action-button {
+                position: absolute;
+                top: -28px;
+                right: 16px;
+                width: 56px;
+                height: 56px;
+                border-radius: 28px;
+                z-index: 10;
+                background-image: url(var/dove1.png);
+                background-position: 50% 50%;
+                background-size: auto;
+                background-repeat: no-repeat;
+            }
+            .header-button {
+                float: right;
+                width: 70px;
+                height: 70px;
+                z-index: 10;
+                position: relative; /* for z-index to work */
+                background-image: url(var/dove1.png);
+                background-position: 50% 50%;
+                background-size: auto;
+                background-repeat: no-repeat;
+            }
+            .play-button {
+                background-image: url(var/play-gray.png);
+                background-repeat: no-repeat;
+                background-position: 10px 22px;
+                padding-left: 40px !important;
+            }
+            .pause-button {
+                background-image: url(var/pause-gray.png);
+                background-repeat: no-repeat;
+                background-position: 10px 22px;
+                padding-left: 40px !important;
+            }
+            .loading-button {
+                background-image: url(var/loading-gray.gif);
+                background-repeat: no-repeat;
+                background-position: 10px 22px;
+                padding-left: 40px !important;
+            }
+            .status {
+                display: none;
+            }
+            .button {
+            font-size: 14pt;
+            font-weight: medium;
+            opacity: 0.87;
+            line-height: 18px;
+            padding: 26px 16px 26px 16px;
+            }
+            .icon {
+            display: inline-block;
+            line-height: 24px;
+            padding: 14px 8px 10px 16px;
+            }
+            div.getijdenreeks {
+            padding: 16px 16px 16px
+            }
+            span.getijde {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            width: 42px;
+            line-height: 24px;
+            padding: 6px 0 6px 0;
+            margin-right: 8px;
+            }
+            .red span.getijde {
+            background-color: #F44336;
+            }
+            .white span.getijde {
+            background-color: #FFF9C4;
+            color: #212121;
+            }
+            .green span.getijde {
+            background-color: #4CAF50;
+            }
+            .purple span.getijde {
+            background-color: #9C27B0;
+            }
+            span.getijde.leeg {
+            background-color: white;
+            }
+        </style>
+        <script src="var/jquery-3.1.1.min.js"></script>
+        <script>
+          var audio = {};
+          var TIMEOUT = 20000;
+          var RETRY = 20000;
+          function playRadio(key, mp3, live, site) {
+              var button = '#play-' + key;
+              var status = '#status-' + key;
+              audio[key] = document.createElement('audio');
+              audio[key].live = live;
+              audio[key].updateStatus = function(event) {
+                  switch(event) {
+                      case 'init':
+                          if (site == "radio") {
+                              $(button).hide();
+                          }
+                          $(status).text("Zender zoeken...");
+                          $(button + 'div').addClass('loading-button').removeClass('pause-button play-button');
+                          // small random delay of < 2 sec to spread audio requests
+                          setTimeout(function(){
+                              audio[key].src = mp3;
+                              audio[key].preload = 'metadata';
+                          }, Math.floor(Math.random * 2000));
+                          setTimeout(function(){
+                              audio[key].updateStatus('timeout');
+                          }, TIMEOUT);
+                          break;
+                      case 'canplay':
+                          if ($(status).text() == "Zender zoeken..." ||
+                              $(status).text() == "Geen verbinding...") {
+                              $(button + ' div').addClass('play-button').removeClass('loading-button pause-button');
+                              if (site == "radio") {
+                                  $(button).show();
+                              }
+                              $(status).text("Online");
+                              if (audio[key].live)
+                                  audio[key].src = '';
+                          }
+                          break;
+                      case 'play':
+                          if (audio[key].live || !audio[key].src)  // don't know how, but src can become undefined
+                              audio[key].src = mp3;
+                          audio[key].play();
+                          $(button + ' div').addClass('loading-button').removeClass('pause-button play-button');
+                          $(status).text("Even geduld...");
+                          // retry after 60 seconds, if after 15 seconds if no connection is made
+                          setTimeout(function() {
+                              audio[key].updateStatus('timeout');
+                          }, TIMEOUT)
+                          // stop other stations that might be playing
+                          for (var otherKey in audio) {
+                              if (otherKey != key) {
+                                  var otherStatus = '#status-' + otherKey;
+                                  var otherStatusText = $(otherStatus).text();
+                                  if (otherStatusText == "Luister!" ||
+                                          otherStatusText == "Even geduld..." ) {
+                                      var otherButton = '#play-' + otherKey;
+                                      audio[otherKey].pause();
+                                      if (audio[otherKey].live)
+                                          audio[otherKey].src = '';
+                                      $(otherButton + ' div').addClass('play-button').removeClass('loading-button pause-button');
+                                      $(otherStatus).text("Online");
+                                  }
+                              }
+                          }
+                          break;
+                      case 'playing':
+                          $(button + ' div').addClass('pause-button').removeClass('loading-button play-button');
+                          $(status).text("Luister!");
+                          break;
+                      case 'stop':
+                          audio[key].pause();
+                          if (audio[key].live)
+                              audio[key].src = '';
+                          $(button + ' div').addClass('play-button').removeClass('loading-button pause-button');
+                          $(status).text("Online");
+                          break;
+                      case 'timeout':
+                          // timeout trying to connect
+                          if ($(status).text() == "Zender zoeken..." ||
+                              $(status).text() == "Even geduld..." ||
+                              $(status).text() == "Geen verbinding...") {
+                              $(status).text("Geen verbinding");
+                              audio[key].src = '';
+                              if (site == "radio") {
+                                  $(button).hide();
+                              }
+                              setTimeout(function(){
+                                  audio[key].updateStatus('retry');
+                              }, RETRY)
+                          }
+                          break;
+                      case 'retry':
+                          // retry
+                          if ($(status).text() == "Geen verbinding") {
+                              $(status).text("Geen verbinding...");
+                              audio[key].src = mp3;
+                              audio[key].preload = 'metadata';
+                              setTimeout(function(){
+                                  audio[key].updateStatus('timeout');
+                              }, TIMEOUT);
+                          }
+                          break;
+                  }
+              };
+              // station is ready!
+              audio[key].addEventListener('loadedmetadata', function () { // firefox doesn't send canplay event
+                  audio[key].updateStatus('canplay');
+              }, true);
+              // station has started playing
+              audio[key].addEventListener('playing', function () {
+                  audio[key].updateStatus('playing');
+              }, true);
+              $(button).on('click', function () {
+                  // click PLAY
+                  if (audio[key].paused) {
+                      audio[key].updateStatus('play');
+                  // click STOP
+                  } else {
+                      audio[key].updateStatus('stop');
+                  }
+              });
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+                  audio[key].updateStatus('canplay'); // mobile browsers refuse to probe audio if not initiated by user action
+              } else {
+                  audio[key].updateStatus('init');
+              }
+              return audio[key];
+              //@ sourceURL=playRadio.js
+          }
+          function load_card(url) {
+              // fetch html and display it
+              // this could be a jQuery one-liner, but $.load with extra selector after url won't run js
+              //audio[key].updateStatus('stop');
+              $.get(url, function(html) {
+                  var $html = $(html.trim()); // trim removes leading newlines, which are not accepted by jquery when parsing html
+                  $(".item.placeholder").empty();
+                  $html.find('.card').appendTo(".item.placeholder");
+                  $html.find('script').appendTo(".item.placeholder");
+                  $(".item.placeholder").find("img[src^='/var']").each(function() {
+                    $(this).attr("src", "http://alledaags.gelovenleren.net" + $(this).attr("src"));
+                  });
+                  $(".item.placeholder").find("a[onclick*='random']").each(function() {
+                    // $('#bijbeljaar').load('/random/bijbeljaar .card',function(){$(this).imagesLoaded(function(){$('#container').masonry();});});
+                    $(this).attr("onclick", $(this).attr("onclick").replace(
+                      /.*\/random\/([a-z]+) .*/, 
+                      "load_card('http://alledaags.gelovenleren.net/random/$1')"
+                    ));
+                  });
+                  $(".item.placeholder").show();
+              }, 'html');
+          }
+          $(function() {
+            $("#body").height($("body").height() - 18);
+            $(".actions a").on("click", function() {
+              var category = "";
+              if (!$(this).hasClass("main")) {
+                category = $(this).attr("class");
+              }
+              load_card('http://alledaags.gelovenleren.net/randomcard/' + category);
+              $(".item.sticky").hide();
+              window.history.pushState({}, window.document.title, ''); 
+            });
+            $(window).on('popstate', function(event) {
+              $(".item.placeholder").hide();
+              $(".item.sticky").show();
+            });
+          });
+      </script>
+    </head>
+    <body>
+        <header>
+            <div class="header-button" id="random"></div>
+            <script>
+                $('#random').on('click',function() {
+                    var visibleCards = $('.item:visible:not(.sticky)');
+                    var count = visibleCards.length;
+                    var random = Math.floor(Math.random() * (count));
+                    var randomCard = visibleCards.eq(random);
+                    visibleCards.hide();
+                    randomCard.show();
+                    $('#showOldNewsTitle').show();
+                    window.scrollTo(0,0);
+                });
+            </script>
+            <h1>Alledaags Geloven</h1>
+        </header>
+        <div id="body">
+            <div id="container">
+                <div class="item sticky">
+                    <div class="card" id="selectColor">
+                        <div class="actions">
+                            <a class="lectionary">
+                                <div class="button">Lectionarium</div>
+                            </a>
+                            <a class="bible">
+                                <div class="button">Heilige Schrift</div>
+                            </a>
+                            <a class="catechism">
+                                <div class="button">Catechismus</div>
+                            </a>
+                            <a class="saints">
+                                <div class="button">Martyrologium</div>
+                            </a>
+                            <a class="prayer">
+                                <div class="button">Gebed</div>
+                            </a>
+                            <a class="contemplation">
+                                <div class="button">Contemplatie</div>
+                            </a>
+                        </div>
+                        <div class="actions spacer">
+                            <a class="main">
+                                <div class="main-action-button"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item placeholder">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div><a href="mailto:info@gelovenleren.net">MAIL</a></div>
+            <div><a href="http://gelovenleren.net/blog/alledaags-geloven/">INFO</a></div>
+            <div><a href="https://www.facebook.com/alledaagsgeloven">FACEBOOK</a></div>
+            <div><a class="link" href="https://www.facebook.com/sharer/sharer.php?u=http://alledaags.gelovenleren.net">delen op FACEBOOK</a></div>
+            <div><a class="link" href="https://twitter.com/home?status=%22jouw%20dashboard%20voor%20dagelijks%20gebed%2C%20studie%20of%20bezinning%22%20http://alledaags.gelovenleren.net">delen op TWITTER</a></div>
+            <div><a class="link" href="https://plus.google.com/share?url=http://alledaags.gelovenleren.net">delen op GOOGLE+</a></div>
+        </footer>
+    </body>
+</html>
+
