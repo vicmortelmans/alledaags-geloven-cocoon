@@ -6,9 +6,9 @@
   <name>Alledaags Geloven</name>
   <description>Jouw dashboard voor dagelijks gebed, studie of bezinning.</description>
   <author href="https://gelovenleren.net" email="info@gelovenleren.net">Geloven Leren</author>
-  <preference name="phonegap-version" value="cli-7.1.0" />
+  <preference name="phonegap-version" value="cli-9.0.0" />
   <preference name="pgb-builder-version" value="2" />
-  <engine name="android" spec="7.0.0" />
+  <engine name="android" spec="8.0.0" />
   <platform name="android">
       <icon density="mdpi" src="icons/apple-touch-icon-57x57.png"/>
       <icon density="hdpi" src="icons/apple-touch-icon-72x72.png"/>
