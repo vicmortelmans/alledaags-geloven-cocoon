@@ -13,9 +13,9 @@
       <icon density="xxhdpi" src="icons/apple-touch-icon-144x144.png"/>
       <icon density="xxxhdpi" src="icons/apple-touch-icon-120x120.png"/>
   </platform>
-  <plugin name="cordova-plugin-whitelist" spec="1" />
-  <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
-  <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+  <plugin name="cordova-plugin-whitelist"/>
+  <plugin name="cordova-plugin-inappbrowser"/>
+  <plugin name="cordova-plugin-x-socialsharing" source="npm" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
   <access origin="*" />
