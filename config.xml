@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"
-    xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "net.gelovenleren.alledaags"
-    versionCode = "11"
-    version     = "2.0.0" >
-
-<!-- versionCode is optional and Android only -->
-
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" 
+    id="net.gelovenleren.alledaags"
+    versionCode="11"
+    version="2.0.0" >
   <name>Alledaags Geloven</name>
-
-  <description>
-Jouw dashboard voor dagelijks gebed, studie of bezinning.
-  </description>
-
-  <author href="https://gelovenleren.net" email="info@gelovenleren.net">
-      Geloven Leren
-  </author>
-
-  <platform name="android" />
-
+  <description>Jouw dashboard voor dagelijks gebed, studie of bezinning.</description>
+  <author href="https://gelovenleren.net" email="info@gelovenleren.net">Geloven Leren</author>
+  <platform name="android">
+      <icon density="mdpi" src="icons/apple-touch-icon-57x57.png"/>
+      <icon density="hdpi" src="icons/apple-touch-icon-72x72.png"/>
+      <icon density="xhdpi" src="icons/apple-touch-icon-114x114.png"/>
+      <icon density="xxhdpi" src="icons/apple-touch-icon-144x144.png"/>
+      <icon density="xxxhdpi" src="icons/apple-touch-icon-120x120.png"/>
+  </platform>
   <plugin name="cordova-plugin-whitelist" spec="1" />
+  <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+  <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
   <access origin="*" />
-
 </widget>
