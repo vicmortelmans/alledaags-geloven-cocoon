@@ -532,6 +532,7 @@
               $(".item.placeholder").empty();
               $(".item.placeholder").hide();
               $(".item.sticky").show();
+              audio[key].pause();
               return false;
             });
           });
@@ -560,6 +561,12 @@
                             </a>
                             <a class="contemplation">
                                 <div class="button">Contemplatie</div>
+                            </a>
+                            <a class="mp3">
+                                <div class="button">🔊&nbsp; Luisterkaart</div>
+                            </a>
+                            <a class="video">
+                                <div class="button">▶&nbsp; Kijkkaart</div>
                             </a>
                         </div>
                         <div class="actions spacer">
