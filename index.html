@@ -41,7 +41,7 @@
         <meta name="application-name" content="Alledaags Geloven"/>
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="msapplication-TileImage" content="./icons/mstile-144x144.png" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin,latin-ext">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin,latin-ext">
         <style type="text/css">
             body {
             font: 14pt "Roboto", sans-serif;
@@ -446,20 +446,20 @@
                   $html.find('script').appendTo(".item.placeholder");
                   // redirect the images sources
                   $(".item.placeholder").find("img[src^='/var']").each(function() {
-                    $(this).attr("src", "http://alledaags.gelovenleren.net" + $(this).attr("src"));
+                    $(this).attr("src", "https://alledaags.gelovenleren.net" + $(this).attr("src"));
                   });
                   // redirect the random card link
                   $(".item.placeholder").find("a[onclick*='load_card']").each(function() {
                     $(this).attr("onclick", $(this).attr("onclick").replace(
                       /.*load_card\('([a-z0-9_]+)'\).*/, 
-                      "load_card('http://alledaags.gelovenleren.net/random/$1', false)"
+                      "load_card('https://alledaags.gelovenleren.net/random/$1', false)"
                     ));
                   });
                   // redirect the onclick cookie event handlers
                   $(".item.placeholder").find("a[onclick^='document.cookie']").each(function() {
                     $(this).attr("onclick", $(this).attr("onclick").replace(
                       /.*'(.+?)=(.+?);.*/, 
-                      "cookieMaster.setCookieValue('http://alledaags.gelovenleren.net', '$1', '$2');"
+                      "cookieMaster.setCookieValue('https://alledaags.gelovenleren.net', '$1', '$2');"
                     ));
                   });
                   // rename the href attributes to data-href
@@ -473,16 +473,16 @@
                   $(".item.sticky").hide();
                   // handle clicks on links in the card 
                   // (apart from the "link" link, that will become the share button)
-                  $(".item.placeholder").find("a:not([data-href^='http://alledaags'],[onclick^='load_card'])").on("click", function(event) {
+                  $(".item.placeholder").find("a:not([data-href^='https://alledaags'],[onclick^='load_card'])").on("click", function(event) {
                     cordova.InAppBrowser.open($(this).attr("data-href"), "_system", "location=yes");
                     return false;
                   });
                   // change the icon of the share button
-                  $(".item.placeholder").find("a[data-href^='http://alledaags']").each(function(event) {
+                  $(".item.placeholder").find("a[data-href^='https://alledaags']").each(function(event) {
                     $(this).find("img").attr("src", "var/share-variant.png");
                   });
                   // handle click on share button 
-                  $(".item.placeholder").find("a[data-href^='http://alledaags']").on("click", function(event) {
+                  $(".item.placeholder").find("a[data-href^='https://alledaags']").on("click", function(event) {
                     var options = {
                       message: $(".item.placeholder").find("div.text").text(),
                       subject: $(".item.placeholder").find("div.title").text(),
@@ -524,7 +524,7 @@
               if (!$(this).hasClass("main")) {
                 category = $(this).attr("class");
               }
-              load_card('http://alledaags.gelovenleren.net/randomcard/' + category, true);
+              load_card('https://alledaags.gelovenleren.net/randomcard/' + category, true);
               return false;
             });
             // handle back button
