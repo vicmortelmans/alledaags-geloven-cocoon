@@ -425,51 +425,13 @@
                       "cookieMaster.setCookieValue('https://alledaags.gelovenleren.net', '$1', '$2');"
                     ));
                   });
-                  // rename the href attributes to data-href
-                  // disabling cordova
-                  /* 
-                  $(".item.placeholder").find("a[href]").each(function() {
-                    var href = $(this).attr("href");
-                    $(this).attr("data-href", href);
-                    $(this).removeAttr("href");
-                  });
-                  */
                   // show the card
                   $(".item.placeholder").show();
                   $(".item.sticky").hide();
-                  // handle clicks on links in the card 
-                  // (apart from the "link" link, that will become the share button)
-                  // disabling cordova
-                  /*
-                  $(".item.placeholder").find("a:not([data-href^='https://alledaags'],[onclick^='load_card'])").on("click", function(event) {
-                    cordova.InAppBrowser.open($(this).attr("data-href"), "_system", "location=yes");
-                    return false;
-                  });
-                  */
                   // change the icon of the share button
-                  $(".item.placeholder").find("a[data-href^='https://alledaags']").each(function(event) {
+                  $(".item.placeholder").find("a[href^='https://alledaags']").each(function(event) {
                     $(this).find("img").attr("src", "var/share-variant.png");
                   });
-                  // handle click on share button 
-                  // disabling cordova
-                  /*
-                  $(".item.placeholder").find("a[data-href^='https://alledaags']").on("click", function(event) {
-                    var options = {
-                      message: $(".item.placeholder").find("div.text").text(),
-                      subject: $(".item.placeholder").find("div.title").text(),
-                      url: $(this).attr("data-href")
-                    };
-                    var onSuccess = function(result) {
-                      console.log("Share completed? " + result.completed);
-                      console.log("Shared to app: " + result.app);
-                    };
-                    var onError = function(msg) {
-                      console.log("Sharing failed with message: " + msg);
-                    };
-                    window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
-                    return false;
-                  });
-                  */
                   // push state if needed
                   if (pushState) {
                     window.history.pushState({}, window.document.title, ''); 
@@ -479,20 +441,6 @@
           $(function() {
             // make the footer hide just below the bottom of the screen
             $("#body").css("min-height", $(window).height() + "px");
-            // rename the footer href attributes to data-href
-            $("footer").find("a").each(function() {
-              var href = $(this).attr("href");
-              $(this).attr("data-href", href);
-              $(this).removeAttr("href");
-            });
-            // handle clicks on links in the footer 
-            // disabling cordova
-            /*
-            $("footer").find("a").on("click", function(event) {
-              cordova.InAppBrowser.open($(this).attr("data-href"), "_system", "location=yes");
-              return false;
-            });
-            */
             // handle click on category
             $(".item.sticky .actions a").on("click", function() {
               var category = "";
@@ -556,9 +504,9 @@
             </div>
         </div>
         <footer>
-            <div><a href="https://alledaags.gelovenleren.net">ALLEDAAGS GELOVEN</a></div>
-            <div><a href="https://www.facebook.com/alledaagsgeloven">FACEBOOK</a></div>
-            <div><a href="mailto:info@gelovenleren.net">MAIL</a></div>
+            <div><a target="_blank" href="https://alledaags.gelovenleren.net">ALLEDAAGS GELOVEN</a></div>
+            <div><a target="_blank" href="https://www.facebook.com/alledaagsgeloven">FACEBOOK</a></div>
+            <div><a target="_blank" href="mailto:info@gelovenleren.net">MAIL</a></div>
         </footer>
     </body>
 </html>
